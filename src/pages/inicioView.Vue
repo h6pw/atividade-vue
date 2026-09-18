@@ -316,7 +316,7 @@ p {
   justify-content: center;
   align-items: stretch;
 
-  gap: 24px;
+  gap: 11%;
 
   width: 100%;
 }
