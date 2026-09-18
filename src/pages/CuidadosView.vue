@@ -1,3 +1,466 @@
+<script setup>
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Autoplay } from 'swiper/modules'
+
+import 'swiper/css'
+
+import cachorro1 from '../images/cuidados_01.jpg'
+import cachorro2 from '../images/cuidados_02.jpg'
+import cachorro3 from '../images/cuidados_03.jpg'
+
+const onSwiper = (swiper) => {
+    console.log('Swiper iniciado:', swiper)
+}
+
+const onSlideChange = () => {
+    console.log('Slide alterado')
+}
+</script>
+
 <template>
-    <p>Essa aqui e a pagina dos cuidados</p>
+    <section class="container-adocao">
+
+        <!-- Área principal -->
+        <div class="juntar">
+
+            <!-- Texto -->
+            <div class="texto">
+
+                <span class="badge">
+                    Adoção responsável
+                </span>
+
+                <h1>
+                    Cuidados antes da adoção
+                </h1>
+
+                <p>
+                    Antes de Adotar, é importante avaliar se a familia possui
+                    tempo, espaço e condições para cuidar do animal.
+                </p>
+
+            </div>
+
+            <!-- Carrossel -->
+            <div class="imagem-wrapper">
+
+                <Swiper :modules="[Autoplay]" :slides-per-view="1" :loop="true" :autoplay="{
+                    delay: 3000,
+                    disableOnInteraction: false
+                }" class="mySwiper" @swiper="onSwiper" @slide-change="onSlideChange">
+
+                    <SwiperSlide>
+                        <img :src="cachorro1" alt="Veterinário Cuidando Do Cachorro" />
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <img :src="cachorro2" alt="Veterinário Cuidando Do Cachorro" />
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                        <img :src="cachorro3" alt="Veterinário Cuidando Do Cachorro" />
+                    </SwiperSlide>
+
+                </Swiper>
+
+            </div>
+
+        </div>
+
+        <!-- Cards -->
+        <div class="cards">
+            <div class="card">
+                <p class="titulo-card">
+                    Adoção consciente
+                </p>
+                <ul>
+                    <li class="texto-card">
+                        Alimentação: oferecer alimento adequado para a idade e porte
+                    </li>
+                    <li class="texto-card">
+                        Água: manter Água limpa e disponivel durante o dia
+                    </li>
+                    <li class="texto-card">
+                        Vacinação: Seguir orientações do veterinário e manter a vacinação em dia
+                    </li>
+                    <li class="texto-card">
+                        Higiene: Manter o animal limpo e saudável
+                    </li>
+                    <li class="texto-card">
+                        Tempo e atenção: dedicar tempo para brincar, passear e interagir com o animal
+                    </li>
+                 </ul>
+            </div>
+
+            <div class="pense">
+                <p class="titulo-card">
+                    Pense Antes de Adotar
+                </p>
+
+                <p class="texto-card">
+                    Um Animal pode Permanecer
+                    muitos Anos com a Familia.
+                    A decisão de Adotar deve
+                    ser consciente e compartilhada
+                    com todos.
+                </p>
+            </div>
+        </div>
+        <div>
+            <a href="animais" class="btn-conhecer">
+                Voltar para os animais
+            </a>
+        </div>
+    </section>
 </template>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:global(:root) {
+    --verde: #21745d;
+    --verde-escuro: #17634f;
+    --verde-claro: #e9f4f0;
+    --branco: #ffffff;
+    --cinza: #66716d;
+    --cinza-claro: #f4f7f6;
+    --texto: #285d4f;
+    --sombra: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --raio: 8px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container-adocao {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 40px 100px;
+
+    box-sizing: border-box;
+
+    font-family: 'Comic Relief', system-ui, sans-serif;
+
+    color: var(--texto);
+    background: var(--cinza-claro);
+}
+
+/* =========================
+   ÁREA PRINCIPAL
+========================= */
+
+.juntar {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-bottom: 4%;
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.texto {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 16px;
+}
+
+.badge {
+    display: inline-block;
+
+    background-color: #e2f0eb;
+
+    color: #21745d;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+}
+
+h1 {
+    color: #17634f;
+
+    font-size: 2.2rem;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    margin: 4px 0 8px;
+
+    font-family: 'Comic Relief', system-ui, sans-serif;
+}
+
+p {
+    color: #66716d;
+
+    font-size: 0.95rem;
+    line-height: 1.5;
+
+    margin: 0;
+
+    font-family: 'Comic Relief', system-ui, sans-serif;
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+.btn-conhecer {
+    display: inline-block;
+
+    margin-top: 8px;
+
+    background-color: #17634f;
+
+    color: #ffffff;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    padding: 12px 24px;
+
+    border-radius: 8px;
+
+    transition: 0.2s ease;
+}
+
+.btn-conhecer:hover {
+    background-color: #21745d;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   SWIPER
+========================= */
+
+.imagem-wrapper {
+    flex: 1;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    min-width: 0;
+}
+
+.mySwiper {
+    width: 100%;
+
+    max-width: 500px;
+
+    overflow: hidden;
+
+    border-radius: 16px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.mySwiper img {
+    display: block;
+
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 16px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 24px;
+
+    width: 100%;
+}
+
+.card {
+    width: 100%;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+
+    border-radius: 10px;
+
+    box-shadow: var(--sombra);
+}
+
+.pense {
+    width: 100%;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    background-color: #FFF4D6;
+
+    border-radius: 10px;
+
+    box-shadow: var(--sombra);
+
+    margin-bottom: 15px;
+    
+}
+
+.titulo-card {
+    margin-bottom: 8px;
+
+    color: #21745d;
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+.texto-card {
+    color: #66716d;
+
+    font-size: 16px;
+
+    font-weight: 600;
+    
+    padding: 15px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .container-adocao {
+        padding: 40px 50px;
+    }
+
+    .juntar {
+        gap: 30px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .mySwiper img {
+        height: 300px;
+    }
+
+    .cards {
+        gap: 16px;
+    }
+}
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 768px) {
+
+    .container-adocao {
+        padding: 30px 25px;
+    }
+
+    .juntar {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 30px;
+    }
+
+    .texto {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .imagem-wrapper {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .mySwiper {
+        max-width: 100%;
+    }
+
+    .mySwiper img {
+        height: 300px;
+    }
+
+    .cards {
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 16px;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
+
+/* =========================
+   CELULAR PEQUENO
+========================= */
+
+@media (max-width: 480px) {
+
+    .container-adocao {
+        padding: 25px 18px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .btn-conhecer {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+    .mySwiper img {
+        height: 240px;
+    }
+}
+</style>
