@@ -46,9 +46,9 @@ const onSlideChange = () => {
         </p>
 
         <div>
-          <a href="animais" class="btn-conhecer">
+          <RouterLink to="/animais" class="btn-conhecer">
             Conhecer os animais
-          </a>
+          </RouterLink>
         </div>
 
       </div>
@@ -96,40 +96,56 @@ const onSlideChange = () => {
 
     </div>
 
-    <!-- Cards -->
-    <div class="cards">
+<!-- Cards -->
+<div class="cards">
 
-      <div class="card">
-        <p class="titulo-card">
-          Adoção consciente
-        </p>
+  <div class="card">
 
-        <p class="texto-card">
-          Adotar exige responsabilidade, cuidado e planejamento.
-        </p>
-      </div>
-
-      <div class="card">
-        <p class="titulo-card">
-          Animais acolhidos
-        </p>
-
-        <p class="texto-card">
-          Todos os animais recebem atenção enquanto aguardam uma família.
-        </p>
-      </div>
-
-      <div class="card">
-        <p class="titulo-card">
-          Nova família
-        </p>
-
-        <p class="texto-card">
-          Uma adoção responsável pode transformar diferentes vidas.
-        </p>
-      </div>
-
+    <div class="card-icon">
+      <i class="fa-solid fa-dog"></i>
     </div>
+    
+    <p class="titulo-card">
+      Adoção consciente
+    </p>
+
+    <p class="texto-card">
+      Adotar exige responsabilidade, cuidado e planejamento.
+    </p>
+
+  </div>
+
+  <div class="card">
+    <div class="card-icon">
+      <i class="fa-solid fa-heart"></i>
+    </div>
+
+    <p class="titulo-card">
+      Animais acolhidos
+    </p>
+
+    <p class="texto-card">
+      Todos os animais recebem atenção enquanto aguardam uma família.
+    </p>
+
+  </div>
+
+  <div class="card">
+    <div class="card-icon">
+      <i class="fa-solid fa-house"></i>
+    </div>
+
+    <p class="titulo-card">
+      Nova família
+    </p>
+
+    <p class="texto-card">
+      Uma adoção responsável pode transformar diferentes vidas.
+    </p>
+
+  </div>
+
+</div>
 
   </section>
 </template>
@@ -195,6 +211,14 @@ const onSlideChange = () => {
   align-items: flex-start;
 
   gap: 16px;
+}
+
+.texto h1 {
+  font-size: 2.5rem;
+}
+
+.texto p {
+  font-size: 1.2rem;
 }
 
 .badge {
@@ -281,6 +305,7 @@ p {
   justify-content: flex-end;
 
   min-width: 0;
+
 }
 
 .mySwiper {
@@ -293,6 +318,9 @@ p {
   border-radius: 16px;
 
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  border: 4px solid #176b57;
+  border-radius: 22px;
 }
 
 .mySwiper img {
@@ -312,41 +340,67 @@ p {
 
 .cards {
   display: flex;
-
   justify-content: center;
   align-items: stretch;
-
-  gap: 11%;
-
+  gap: 30px;
   width: 100%;
 }
 
 .card {
   width: 100%;
-  max-width: 260px;
+  max-width: 320px;
 
-  padding: 15px;
-
+  padding: 25px 75px 25px 40px;
   box-sizing: border-box;
 
   background-color: #ffffff;
-
   border-radius: 10px;
-
   box-shadow: var(--sombra);
+  transition: transform 0.2s ease;
+
+  border: 2px solid #176b57;
+  border-radius: 22px;
+
+  position: relative;
+}
+
+.card-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #17634f;
+  color: #e9f4f0;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .titulo-card {
-  margin-bottom: 8px;
+  margin-bottom: 22px;
+  min-height: 58px;
+  margin: 0 0 10px 0;
 
   color: #21745d;
 
-  font-size: large;
+  font-size: x-large;
 
   font-weight: 600;
 }
 
 .texto-card {
+  margin: 0;
+
   color: #66716d;
 
   font-size: medium;

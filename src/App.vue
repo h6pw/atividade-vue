@@ -9,13 +9,12 @@ import Header from './components/Header.vue';
       <Header />
     </header>
 
-    <!-- Envolto em um container flexível para empurrar o footer -->
     <main class="conteudo-principal">
       <RouterView />
     </main>
 
     <footer class="rodape">
-      <p>Projeto desenvolvido Por Carlos Eduardo e Matheus Czubka</p>
+      <p>Projeto desenvolvido Por Carlos Eduardo e Matheus Czubka <i class="fa-solid fa-paw"></i></p>
     </footer>
   </div>
 </template>
@@ -34,7 +33,7 @@ import Header from './components/Header.vue';
   --sombra: 0 2px 8px rgba(0, 0, 0, 0.08);
   --raio: 8px;
 
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Comic Relief', Arial, Helvetica, sans-serif;
   color: var(--texto);
   background: var(--cinza-claro);
 

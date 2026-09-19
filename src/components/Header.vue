@@ -9,8 +9,8 @@
       
       <nav class="menu">
          <RouterLink to="/">Inicio</RouterLink>
-         <RouterLink to="/Animais">Animais</RouterLink>
-         <RouterLink to="/Cuidados">Cuidados</RouterLink>
+         <RouterLink to="/animais">Animais</RouterLink>
+         <RouterLink to="/cuidados">Cuidados</RouterLink>
       </nav>
 </template>
 

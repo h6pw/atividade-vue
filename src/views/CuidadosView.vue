@@ -107,9 +107,9 @@ const onSlideChange = () => {
             </div>
         </div>
         <div>
-            <a href="animais" class="btn-conhecer">
+            <RouterLink to="/animais" class="btn-conhecer">
                 Voltar para os animais
-            </a>
+            </RouterLink>
         </div>
     </section>
 </template>
@@ -273,6 +273,9 @@ p {
     border-radius: 16px;
 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+    border: 4px solid #176b57;
+    border-radius: 22px;
 }
 
 .mySwiper img {
@@ -314,6 +317,9 @@ p {
     border-radius: 10px;
 
     box-shadow: var(--sombra);
+
+    border: 2px solid #176b57;
+    border-radius: 22px;
 }
 
 .pense {
@@ -330,7 +336,9 @@ p {
     box-shadow: var(--sombra);
 
     margin-bottom: 15px;
-    
+
+    border: 2px solid #176b57;
+    border-radius: 22px;
 }
 
 .titulo-card {

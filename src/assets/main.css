@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&display=swap');
+
+:root {
+  --verde: #21745d;
+  --verde-escuro: #17634f;
+  --verde-claro: #e9f4f0;
+  --branco: #ffffff;
+  --cinza: #66716d;
+  --cinza-claro: #f4f7f6;
+  --texto: #285d4f;
+
+  --sombra: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --raio: 8px;
+
+  font-family: 'Comic Relief', Arial, Helvetica, sans-serif;
+  color: var(--texto);
+  background: var(--cinza-claro);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

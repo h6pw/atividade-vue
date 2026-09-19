@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Homeview from '../pages/inicioView.vue';
-import AnimaisView from '../pages/AnimaisView.vue';
-import CuidadosView from '../pages/CuidadosView.vue';
+import Homeview from '../views/inicioView.vue';
+import AnimaisView from '../views/AnimaisView.vue';
+import CuidadosView from '../views/CuidadosView.vue';
 import Header from '../components/Header.vue';
 
 const router = createRouter({
